@@ -1,0 +1,132 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Official website of the Amethyst game engine.">
+    <meta name="author" content="Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="Amethyst" />
+    <meta property="og:description" content="Official website of the Amethyst game engine.">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;doc&#x2F;" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;assets&#x2F;amethyst.png" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    
+    <title>Amethyst - Docs</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/doc.css">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+     
+<div id="content">
+    <div>
+        <div class="page-title">
+            Documentation
+            <div class="subtitle">
+                We all need it and so do you.
+            </div>
+        </div>
+    </div>
+    <div>
+        <div id="latest">
+            <span class="title">v0.9.0</span>
+            This is the documentation for the latest release you'll find on
+            <a href="https:&#x2F;&#x2F;crates.io&#x2F;crates&#x2F;amethyst">crates.io</a>
+            <ul>
+                <li><a href="/book/latest">Read the Book</a></li>
+                <li><a href="/doc/latest/doc/amethyst">Browse the API Reference</a></li>
+                <li><a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst/tree/v0.9.0/examples">View all Examples</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div id="master">
+            <span class="title">Living on the Edge?</span>
+            If you know what you're doing and want the documentation for the
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">master branch</a>, here's where you'll find it.
+            <ul>
+                <li><a href="/book/master">Read the Book</a></li>
+                <li><a href="/doc/master/doc/amethyst">Browse the API Reference</a></li>
+                <li><a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst&#x2F;tree&#x2F;master&#x2F;examples">View all Examples</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+ 
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                <br>
+                <a href="&#x2F;doc">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;discord.gg&#x2F;E2Dd244">Discord</a>
+                <br>
+                <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Subreddit</a>
+                <br>
+                <a href="/rss.xml">RSS Feed</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

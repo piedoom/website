@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="What happened this week: new CI strategy, tutorial improvements and upcoming features">
+    <meta name="author" content="Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="This week in Amethyst 12" />
+    <meta property="og:description" content="What happened this week: new CI strategy, tutorial improvements and upcoming features">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;blog&#x2F;twia-12&#x2F;" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;assets&#x2F;amethyst.png" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2018-10-27" />
+
+    <title>Amethyst - This week in Amethyst 12</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+     
+<div id="content">
+    <div id="title">This week in Amethyst 12</div>
+    <div id="subtitle">Published on 2018-10-27  by 
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;torkleyy">torkleyy</a>
+    </div>
+    <div id="article-content"><p>Hello and welcome to the 12th issue of <em>This Week in Amethyst</em>, a blog bringing to
+you the latest changes regarding Amethyst, a data-driven game engine written in
+Rust.</p>
+<p>We're very proud of the fast growing activity on our project! Given the wide
+interest from the community, we figured it's time to continue
+<em>This Week in Amethyst</em>. We'd like to go with the following structure from now
+on:</p>
+<ul>
+<li>important recent changes</li>
+<li>chosen ongoing issues / PRs with high importance and / or activity</li>
+<li>call for participation</li>
+</ul>
+<p>A list of new contributors, issues and PRs will no longer be included. New
+contributors will be listed in release posts; issues and PRs have gotten far
+too many to list them all here.</p>
+<h2 id="new-ci-strategy">New CI strategy</h2>
+<p>CI is crucially important for any project, even more so for the big ones. That
+said, Travis and AppVeyor have been causing us issues for a long time now,
+blocking effective work on the engine due to long build times. While Travis
+did generally work better than AppVeyor, it cannot handle the massive workload
+that Amethyst generates with all the PRs and staging
+builds<sup><a href="#fn1" id="r1">[1]</a></sup>.</p>
+<p>After an insane amount of research and experimentation, <a href="https://github.com/magnanellie">Ellie</a> has come
+up with a big first step to improve the situation, implemented by
+<a href="https://github.com/amethyst/amethyst/pull/1047">this PR</a>. These are the changes in short:</p>
+<ul>
+<li>use <a href="https://concourse-ci.org/">Concourse</a> as a first pass for building PRs for Linux and showing
+its status</li>
+<li>thanks to Travis' new Windows support, Travis can now be used to build for all
+three platforms; it will now be used by
+bors<sup><a href="#fn1" id="r1">[1]</a></sup>, as a final check before merging
+the PR into master</li>
+<li>AppVeyor has been dropped entirely</li>
+</ul>
+<p>This way, Travis has less workload and is only needed when a PR is merged.
+By using Concourse we not only avoid blocking our merging pipeline, but we
+now also have dedicated status reports for tests, book tests and correct
+formatting.</p>
+<h2 id="what-s-being-worked-on-currently">What's being worked on currently?</h2>
+<p>Amethyst's math library has been using <code>cgmath</code> so far, but we've decided that
+we want to move to Nalgebra. We previously used <code>cgmath</code> due
+to both historic and simplicity reasons. Since it changed into maintainance
+mode<sup><a href="#fn2" id="r2">[2]</a></sup>
+and <code>nalgebra</code> has an easier API now, we're doing the migration.
+We think this is an important step for unifying the Rust ecosystem.
+Thanks to <a href="https://github.com/magnanellie">Ellie</a> for doing <a href="https://github.com/amethyst/amethyst/pull/1066">the migration PR</a>!</p>
+<p>The transition to Nalgebra in Amethyst &amp; its <a href="https://github.com/amethyst/amethyst-rhusics">rhusics bridge</a> is going to
+be the focus for this release. Meanwhile, <a href="https://github.com/Rhuagh">Rhuagh</a> and <a href="https://github.com/sebcrozet">sebcrozet</a>
+are working on <a href="https://github.com/rustsim/nphysics-ecs">better ECS support</a> for <a href="https://github.com/rustsim/nphysics"><code>nphysics</code></a> (work hasn't
+started on the nphysics-ecs repo just yet, but it's planned for this weekend).</p>
+<p>In other news, <a href="https://github.com/Ristarg">Yuurai</a> is working on a formatting tool for <a href="https://github.com/ron-rs/ron">RON files</a>!
+You can find the repo <a href="https://github.com/Ristarg/ronfmt">here</a>, but note that it's still very experimental.
+This will make our lives a lot easier since RON files are used for configuration
+and prefabs in Amethyst; soon we'll no longer have to format them by hand!</p>
+<p>Speaking of prefabs... <a href="https://github.com/Rhuagh">Rhuagh</a> is working on <a href="https://github.com/amethyst/amethyst/pull/1035">a PR</a> that lets us define
+new prefabs very easily, with much less boilerplate. With the new macro it will
+be as easy as adding a few derives:</p>
+<pre style="background-color:#272822">
+<span style="background-color:#272822;color:#f8f8f2;">#[derive(Default, Deserialize, Serialize, PrefabData)]
+</span><span style="background-color:#272822;color:#f8f8f2;">#[serde(default)]
+</span><span style="background-color:#272822;font-style:italic;color:#66d9ef;">struct </span><span style="background-color:#272822;color:#f8f8f2;">ScenePrefabData {
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">transform: Option&lt;Transform&gt;,
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">gltf: Option&lt;AssetPrefab&lt;GltfSceneAsset, GltfSceneFormat&gt;&gt;,
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">camera: Option&lt;CameraPrefab&gt;,
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">light: Option&lt;LightPrefab&gt;,
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">tag: Option&lt;Tag&lt;AnimationMarker&gt;&gt;,
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">fly_tag: Option&lt;ControlTagPrefab&gt;,
+</span><span style="background-color:#272822;color:#f8f8f2;">}
+</span></pre><h2 id="interesting-discussions">Interesting discussions</h2>
+<p>There's one RFC chosen to be presented here,
+&quot;Std I/O driven application (aka <code>amethyst_commands</code>)&quot; (<a href="https://github.com/amethyst/amethyst/issues/999">link</a>).</p>
+<p>This RFC, written by <a href="https://github.com/azriel91">azriel</a>, is part of a bigger topic, runtime
+modification of the game and control of its behavior. This is required for
+many things like the editor, networking, modding, scripting, etc. Make sure
+to weigh in if you have any ideas regarding these topics! We're hoping that
+we can find a way to make all of that possible with as few APIs as possible.</p>
+<p>The RFC specifically is based on code <a href="https://github.com/azriel91">azriel</a> has already implemented for
+<a href="https://azriel.im/will/">their own game</a>. Here's a little proof of concept they posted a while ago,
+so you can get an idea what this is about:</p>
+<div class="youtube">
+    <iframe src="https://www.youtube.com/embed/jpk2MTeWz3w" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+    </iframe>
+</div>
+<p>
+<p>We're happy to get some input from you!</p>
+<h2 id="call-for-participation">Call for participation</h2>
+<p>We love contributions from the community, so if you see something you'd like
+to work on, don't hesitate! We are going to help you and point you into the
+right direction if something doesn't work out at first.</p>
+<p>We have tasks with different difficulty. Make sure to choose easier ones at
+first, because hard issues can become quite frustrating, especially if you
+haven't worked on Amethyst before.</p>
+<p>Here are seven issues for you to pick from:</p>
+<ul>
+<li>[very easy] <a href="https://github.com/amethyst/amethyst/issues/908">Help us remove some unwraps!</a></li>
+<li>[easy] <a href="https://github.com/amethyst/amethyst/issues/951">Doc improvements</a> (you can add new suggestions or fix existing)</li>
+<li>[easy] <a href="https://github.com/amethyst/amethyst/issues/977">Textures are dynamic unconditionally</a></li>
+<li>[moderate] <a href="https://github.com/amethyst/amethyst/issues/855">Lighting / Pass compatibility</a></li>
+<li>[moderate] <a href="https://github.com/amethyst/amethyst/issues/1044">Create architectural overview of Amethyst</a> (can be auto-
+generated)</li>
+<li>[moderate] <a href="https://github.com/amethyst/amethyst/issues/637">Write animation tutorial for the book</a></li>
+<li>[moderate] <a href="https://github.com/amethyst/amethyst/issues/1019">Managing graphics settings &amp; applying changes</a></li>
+</ul>
+<p>Please let us know that you're working on an issue using a short comment,
+that way we can avoid duplicate work. Also note that you can help by
+contributing to the discussion; especially the last issue can really use
+some more input!</p>
+<p>Thank you for helping push the project forward!</p>
+<p><a href="#r1" id="fn1">[1]</a> <a href="https://bors.tech/">bors</a> is a GitHub bot that merges our PRs and makes
+sure they're compatible with the latest master by using a &quot;staging&quot; branch.
+You can read more about that on <a href="https://bors.tech/">their website</a>.</p>
+<p><a href="#r2" id="fn2">[2]</a> <code>cgmath</code> has been moved into <a href="https://github.com/rustgd/">rustgd</a> and is not
+having a lot of activity. If there is a PR, it's going to be merged, but
+nobody expects a lot of work to happen on it.</p>
+</div>
+</div>
+ 
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                <br>
+                <a href="&#x2F;doc">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;discord.gg&#x2F;E2Dd244">Discord</a>
+                <br>
+                <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Subreddit</a>
+                <br>
+                <a href="/rss.xml">RSS Feed</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

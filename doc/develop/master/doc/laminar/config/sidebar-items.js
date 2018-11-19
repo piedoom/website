@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["NetworkConfig","Struct that contains config values for various aspects of the network"]]});

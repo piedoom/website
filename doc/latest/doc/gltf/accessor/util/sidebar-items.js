@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Iter","Visits the items in an [`Accessor`]."]],"trait":[["Item","Represents items that can be read by an [`Accessor`]."]]});

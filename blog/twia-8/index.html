@@ -1,0 +1,169 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Eighth issue of This Week in Amethyst.">
+    <meta name="author" content="Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="These Weeks in Amethyst 8" />
+    <meta property="og:description" content="Eighth issue of This Week in Amethyst.">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;blog&#x2F;twia-8&#x2F;" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;assets&#x2F;amethyst.png" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2016-03-28" />
+
+    <title>Amethyst - These Weeks in Amethyst 8</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+     
+<div id="content">
+    <div id="title">These Weeks in Amethyst 8</div>
+    <div id="subtitle">Published on 2016-03-28 
+    </div>
+    <div id="article-content"><blockquote>
+<p>News from Mar 13, 2016 – Mar 27, 2016</p>
+</blockquote>
+<p>Hello and welcome to the eighth issue of <em>This Week in Amethyst</em>, a blog
+bringing you the latest changes and updates regarding the Amethyst game engine
+every week (or two). If you have any suggestions or ideas, feel free to voice
+them <a href="https://github.com/amethyst/website">on GitHub</a> or <a href="https://gitter.im/orgs/amethyst/rooms">the Gitter chat</a>.</p>
+<p>Eight pull requests, <a href="https://github.com/amethyst/amethyst/pulls?q=is:pr+closed:2016-03-13..2016-03-27">four in the engine</a> and <a href="https://github.com/amethyst/tools/pulls?q=is:pr+closed:2016-03-13..2016-03-27">four in the tools</a>,
+landed over these weeks.</p>
+<h2 id="announcements">Announcements</h2>
+<p><a href="https://github.com/amethyst/amethyst/issues/27">Amethyst is now an organization on GitHub!</a> All the Amethyst
+repositories have been transferred to this new organization, and
+<a href="https://github.com/amethyst/amethyst/wiki">the wiki</a> is now completely open for collaborators to edit.
+<a href="https://gitter.im/orgs/amethyst/rooms">The Gitter chat</a> has also been split into multiple rooms to help keep
+conversations organized and reduce overall noise.</p>
+<p>With these changes, some links may be broken. We will be fixing old links,
+especially on old <em>TWIA</em> articles, to ensure continuity. If you come across
+other broken links online, please let us know on the <a href="https://gitter.im/amethyst/website">amethyst/website</a>
+room on Gitter and we'll go fix it!</p>
+<p><a href="https://blog.amethyst.rs/">The old WordPress blog</a> is being discontinued in favor of this website.
+We will keep it up for the forseeable future to keep old links intact, but it
+will no longer be updated. Please update your bookmarks and <a href="https://www.amethyst.rs/rss.xml">RSS feeds</a>!</p>
+<p>The entity-component-system is still undergoing churn under
+<a href="https://github.com/amethyst/amethyst/issues/10">engine issue #10</a> and on the <a href="https://gitter.im/amethyst/engine">&quot;engine&quot; chat room</a>. To keep our
+thoughts straight, @<a href="https://github.com/kvark">kvark</a> put together <a href="https://gist.github.com/kvark/168b132818aa6f6ef4db">an excellent Gist</a>
+summarizing our ideas so far. Check it out!</p>
+<h2 id="what-s-cooking-on-master">What's cooking on master?</h2>
+<h3 id="notable-additions">Notable additions</h3>
+<ul>
+<li>Integration tests for <code>amethyst_tools</code> can now be run with <code>cargo test</code>
+(pull request <a href="https://github.com/amethyst/tools/pull/21">#21</a> by @<a href="https://github.com/LucioFranco">LucioFranco</a>).</li>
+<li>The <code>amethyst</code> build tool's subcommands API got a refactor (pull request
+<a href="https://github.com/amethyst/tools/pull/24">#24</a> by @<a href="https://github.com/White-Oak">White-Oak</a>).</li>
+<li>As you can see, we have an official website! It is hosted on
+<a href="https://pages.github.com/">GitHub Pages</a> and made with <a href="https://github.com/cobalt-org/cobalt.rs">Cobalt.rs</a>, a static website generator
+similar to Jekyll written in Rust. Future <em>This Week in Amethyst</em> posts will
+be written collaboratively with public pull requests, much like <em>This Week in
+Rust</em> already does. Thanks to @<a href="https://github.com/Aceeri">Aceeri</a> and @<a href="https://github.com/LucioFranco">LucioFranco</a> for the
+excellent effort! Check out the <a href="https://github.com/amethyst/website">website repo</a> for details.</li>
+</ul>
+<h2 id="new-contributors">New contributors</h2>
+<ul>
+<li><a href="https://github.com/Aceeri">Aceeri</a></li>
+<li><a href="https://github.com/ogoding">ogoding</a></li>
+</ul>
+<h2 id="new-issues">New issues</h2>
+<ul>
+<li>Engine
+<ul>
+<li><a href="https://github.com/amethyst/amethyst/issues/28">Relicense under dual-license Apache2 and MIT (issue #28)</a></li>
+<li><a href="https://github.com/amethyst/amethyst/issues/29">RFC: Config.yml specification</a></li>
+<li><a href="https://github.com/amethyst/amethyst/issues/33">Add RFC tag type to CONTRIBUTING.md (issue #33)</a></li>
+<li><a href="https://github.com/amethyst/amethyst/issues/34">RFC: Extensions system &quot;Shards&quot; (issue #34)</a></li>
+<li><a href="https://github.com/amethyst/amethyst/issues/36">Keeping change log up to date (issue #36)</a></li>
+</ul>
+</li>
+<li>Tools
+<ul>
+<li><a href="https://github.com/amethyst/tools/issues/22">Implement deploy subcommand (issue #22)</a></li>
+<li><a href="https://github.com/amethyst/tools/issues/26">Determine if project is amethyst or not (issue #26)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+ 
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                <br>
+                <a href="&#x2F;doc">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;discord.gg&#x2F;E2Dd244">Discord</a>
+                <br>
+                <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Subreddit</a>
+                <br>
+                <a href="/rss.xml">RSS Feed</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

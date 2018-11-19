@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Including new cameras, sprites, better UI and more!">
+    <meta name="author" content="Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="Amethyst 0.7 has been released!" />
+    <meta property="og:description" content="Including new cameras, sprites, better UI and more!">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;blog&#x2F;release-0-7&#x2F;" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;assets&#x2F;amethyst.png" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2018-05-18" />
+
+    <title>Amethyst - Amethyst 0.7 has been released!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+     
+<div id="content">
+    <div id="title">Amethyst 0.7 has been released!</div>
+    <div id="subtitle">Published on 2018-05-18 
+    </div>
+    <div id="article-content"><blockquote>
+<p>News from <code>Jan 06 2018</code> – <code>May 18 2018</code></p>
+</blockquote>
+<p>Amethyst is a data oriented game engine written in Rust with a focus on
+parallel execution!
+<a name="continue-reading"></a></p>
+<h2 id="announcements">Announcements</h2>
+<p>We have a new subreddit! <a href="https://www.reddit.com/r/Amethyst/">r/amethyst</a></p>
+<p>We're happy to announce that we've released Amethyst 0.7.0
+to <a href="https://crates.io">crates.io</a>!</p>
+<p>There are 124 pull requests in this release.  If you want to see for yourself
+here's a <a href="https://github.com/amethyst/amethyst/pulls?utf8=%E2%9C%93&amp;q=is%3Apr+is%3Amerged+merged%3A2017-12-29..2018-05-18">link</a>!</p>
+<h2 id="notable-additions">Notable additions</h2>
+<ul>
+<li>Support for rendering sprites (<a href="https://github.com/amethyst/amethyst/pull/638">#638</a>).</li>
+<li>Fly Camera (<a href="https://github.com/amethyst/amethyst/pull/578">#578</a>).</li>
+<li>UI Layouts (<a href="https://github.com/amethyst/amethyst/pull/591">#591</a>).</li>
+<li>UI Events (<a href="https://github.com/amethyst/amethyst/pull/580">#580</a>).</li>
+<li>Introduce a generic animation system, with support for both transform and texture animation (<a href="https://github.com/amethyst/amethyst/pull/558">#558</a>), (<a href="https://github.com/amethyst/amethyst/pull/566">#566</a>), (<a href="https://github.com/amethyst/amethyst/pull/567">#567</a>), (<a href="https://github.com/amethyst/amethyst/pull/569">#569</a>), (<a href="https://github.com/amethyst/amethyst/pull/570">#570</a>), (<a href="https://github.com/amethyst/amethyst/pull/611">#611</a>), (<a href="https://github.com/amethyst/amethyst/pull/641">#641</a>), (<a href="https://github.com/amethyst/amethyst/pull/644">#644</a>)</li>
+<li>Add transparency support to core passes (<a href="https://github.com/amethyst/amethyst/pull/543">#543</a>), (<a href="https://github.com/amethyst/amethyst/pull/574">#574</a>), (<a href="https://github.com/amethyst/amethyst/pull/584">#584</a>)</li>
+<li>Add vertex skinning (<a href="https://github.com/amethyst/amethyst/pull/545">#545</a>), (<a href="https://github.com/amethyst/amethyst/pull/619">#619</a>)</li>
+<li>Expose a basic visibility ordering system, with the ability to swap in better replacement systems (<a href="https://github.com/amethyst/amethyst/pull/595">#595</a>)</li>
+<li>Audio <code>Output</code> is now added directly rather than as an <code>Option</code>, should now be fetched with <code>Option&lt;Read&lt;'a, Output&gt;&gt;</code> (<a href="https://github.com/amethyst/amethyst/pull/679">#679</a>)</li>
+<li>New nightly feature that enables <code>shred</code>s nightly feature (<a href="https://github.com/amethyst/amethyst/pull/689">#689</a>)</li>
+<li><code>Transform</code> refactored, and added lots of utility functions (<a href="https://github.com/amethyst/amethyst/pull/660">#660</a>)</li>
+<li>Add new raw mouse events for use with camera rotation (<a href="https://github.com/amethyst/amethyst/pull/699">#699</a>)</li>
+<li>Add UiButtons and UiButtonBuilder (<a href="https://github.com/amethyst/amethyst/pull/613">#613</a>)</li>
+<li>Add arc ball camera (<a href="https://github.com/amethyst/amethyst/pull/700">#700</a>)</li>
+</ul>
+<h2 id="work-in-progress">Work in progress</h2>
+<ul>
+<li>Prefab loading (<a href="https://github.com/amethyst/amethyst/pull/716">#716</a>)</li>
+<li>Networking (<a href="https://github.com/amethyst/amethyst/pull/665">#665</a>)</li>
+<li>Localisation wrapper (<a href="https://github.com/amethyst/amethyst/pull/663">#663</a>)</li>
+</ul>
+<h2 id="major-breaking-changes">Major breaking changes</h2>
+<ul>
+<li>Update dependencies to the newest versions: cgmath, winit, glutin, gfx, gfx_glyph (<a href="https://github.com/amethyst/amethyst/pull/527">#527</a>), (<a href="https://github.com/amethyst/amethyst/pull/572">#572</a>), (<a href="https://github.com/amethyst/amethyst/pull/648">#648</a>)</li>
+<li>Rodio updated to 0.7 (<a href="https://github.com/amethyst/amethyst/pull/676">#676</a>)</li>
+<li>Refactored bundles to only contain <code>System</code>s (<a href="https://github.com/amethyst/amethyst/pull/675">#675</a>)</li>
+<li>Refactor to use new specs, major breakage! (<a href="https://github.com/amethyst/amethyst/pull/674">#674</a>), (<a href="https://github.com/amethyst/amethyst/pull/679">#679</a>), (<a href="https://github.com/amethyst/amethyst/pull/683">#683</a>), (<a href="https://github.com/amethyst/amethyst/pull/662">#662</a>).</li>
+<li>Upgrade to winit 1.13.1 (<a href="https://github.com/amethyst/amethyst/pull/698">#698</a>)</li>
+<li>Refactor game data, permit greater extensibility (<a href="https://github.com/amethyst/amethyst/pull/691">#691</a>)</li>
+</ul>
+<h2 id="new-contributors-from-this-release">New contributors from this release</h2>
+<p>The following new contributors helped make this release happen:</p>
+<ul>
+<li><a href="https://github.com/futurepaul">@futurepaul</a></li>
+<li><a href="https://github.com/azriel91">@azriel91</a></li>
+<li><a href="https://github.com/zoonage">@zoonage</a></li>
+<li><a href="https://github.com/JadeSnail">@JadeSnail</a></li>
+<li><a href="https://github.com/KotBlini">@KotBlini</a></li>
+<li><a href="https://github.com/illis">@illis</a></li>
+<li><a href="https://github.com/MrMinimal">@MrMinimal</a></li>
+<li><a href="https://github.com/akatechis">@akatechis</a></li>
+<li><a href="https://github.com/frazar">@frazar</a></li>
+<li><a href="https://github.com/mubiquity">@mubiquity</a></li>
+<li><a href="https://github.com/cooperra">@cooperra</a></li>
+<li><a href="https://github.com/Lukazoid">@Lukazoid</a></li>
+<li><a href="https://github.com/ShalokShalom">@ShalokShalom</a></li>
+<li><a href="https://github.com/alexlitty">@alexlitty</a></li>
+<li><a href="https://github.com/Moxinilian">@Moxinilian</a></li>
+<li><a href="https://github.com/mnivoliez">@mnivoliez</a></li>
+<li><a href="https://github.com/Hittherhod">@Hittherhod</a></li>
+</ul>
+<h2 id="calls-for-participation">Calls for participation</h2>
+<p>We've opened a few issues that we think are good for first time contributors,
+take a look at the issues on this list and see if any are a good fit for you!</p>
+<ul>
+<li><a href="https://github.com/amethyst/amethyst/issues/714">#714</a></li>
+<li><a href="https://github.com/amethyst/amethyst/issues/686">#686</a></li>
+<li><a href="https://github.com/amethyst/amethyst/issues/669">#669</a></li>
+<li><a href="https://github.com/amethyst/amethyst/issues/582">#582</a></li>
+</ul>
+<p>If you have any suggestions or ideas for Amethyst or the blog, feel free to voice them
+<a href="https://github.com/amethyst/website">on GitHub</a>, <a href="https://gitter.im/orgs/amethyst/rooms">the Gitter chat</a>, or <a href="https://discord.gg/GnP5Whs">Discord</a>!</p>
+</div>
+</div>
+ 
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                <br>
+                <a href="&#x2F;doc">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;discord.gg&#x2F;E2Dd244">Discord</a>
+                <br>
+                <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Subreddit</a>
+                <br>
+                <a href="/rss.xml">RSS Feed</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

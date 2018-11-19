@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The Amethyst team is proud to announce our latest release, filled with new features and with massive improvements to the 2D workflow.">
+    <meta name="author" content="Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="Amethyst 0.9 has been released!" />
+    <meta property="og:description" content="The Amethyst team is proud to announce our latest release, filled with new features and with massive improvements to the 2D workflow.">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;blog&#x2F;release-0-9&#x2F;" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;assets&#x2F;amethyst.png" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2018-10-22" />
+
+    <title>Amethyst - Amethyst 0.9 has been released!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+     
+<div id="content">
+    <div id="title">Amethyst 0.9 has been released!</div>
+    <div id="subtitle">Published on 2018-10-22 
+    </div>
+    <div id="article-content"><h2 id="the-amethyst-team-is-proud-to-announce-our-latest-release-filled-with-new-features-and-with-massive-improvements-to-the-2d-workflow">The Amethyst team is proud to announce our latest release, filled with new features and with massive improvements to the 2D workflow.</h2>
+<p>It has been 2 months since the last release, and we are proud to announce that version <code>0.9</code> of the Amethyst game engine is now available on <a href="https://crates.io/crates/amethyst">crates.io</a>! We would like to thank the numerous contributors involved in this release; the full list is available below.</p>
+<p>Now, onto the features!</p>
+<h2 id="drawsprite-pass">DrawSprite Pass</h2>
+<p>With <code>0.9</code> we are introducing a new way to draw sprites on the screen. Drawing a sprite is now as simple as just attaching a <code>SpriteRender</code> component to the entity you want to draw. This change also allowed sprite batching to be implemented meaning that you should now see a massive boost in performance when displaying a lot of sprites on the screen.</p>
+<p><a href="https://github.com/cart/amethyst-bunnymark">100 000 sprites at 60 fps was even confirmed possible!</a></p>
+<p>We are also introducing new usability features for drawing in a 2D world. One of them is the ability to load spritesheets directly from files. This is done using the serde-compatible RON data format, making it very easy to load big spritesheets and convert them from other sprite sheet formats.</p>
+<h2 id="networking">Networking</h2>
+<p>With <code>0.9</code>, we have started building a new networking system. The initial work was to implement some basic features on top of UDP. You can see that work <a href="https://github.com/amethyst/laminar">here</a>. With this as our solid foundation, our focus for <code>0.10</code> will be on higher-level abstractions, such as automatically syncing entities across clients. The current <code>amethyst_network</code> crate is expected to change a great deal in <code>0.10</code>. The current contents should be viewed as a proof-of-concept only.</p>
+<p>In short, we're not quite production-ready yet, but we're getting there!</p>
+<h2 id="experimental-editor-support">Experimental Editor Support</h2>
+<p>Alongside continued development of the engine, members of the community have
+been building out an experimental editor for building Amethyst games. The
+first part of this work is the <a href="https://crates.io/crates/amethyst-editor-sync">amethyst-editor-sync</a> crate, which provides
+a way for Amethyst games to connect to the editor. This is being built in a way that makes it possible to experiment with multiple different editors without committing to one technology.
+Doing so allows us to get practical experience with a variety of GUI technologies so that we can eventually make an informed decision on which one to adopt for the official editor.</p>
+<p>The first editor being built by the community is <a href="https://github.com/randomPoison/amethyst-editor">randomPoison/amethyst-editor</a>,
+and it is being built with <a href="https://electronjs.org/">Electron</a>. It currently has support for displaying
+any Component or Resource that implements <code>Serialize</code>, and the upcoming 0.3
+release will bring support for tweaking values in the editor and having them
+update within the game.</p>
+<p><img src="https://raw.githubusercontent.com/randomPoison/amethyst-editor/master/screenshots/pong.gif" alt="The Electron editor" /></p>
+<p><img src="https://cdn.discordapp.com/attachments/484132431411281953/503332493743882240/edit-resources-mvp.gif" alt="Edit support" /></p>
+<h2 id="new-convenience-features">New Convenience Features</h2>
+<p>This release brings with it a bunch of new convenience features. Here are some of the highlights:</p>
+<ul>
+<li>A <code>Named</code> component was added to allow entities to carry arbitrary names.</li>
+<li>Added <code>shadow_update</code> and <code>shadow_fixed_update</code> functions to <code>State</code> so it stays updated even when paused.</li>
+<li>There is now a function called <code>application_root_dir</code> in <code>amethyst_utils</code> which allows you to get resources without having to rely on the cargo project path.</li>
+<li>The <code>DebugLines</code> feature and graphical pass now allows showing debugging lines in the scene.</li>
+<li>The <code>JsonFormat</code> was added, allowing the load of prefabs and arbitrary data as the Json format, in addition to the already available Ron format.</li>
+<li>The <code>State::handle_event</code> method now allows receiving configurable and custom event types.</li>
+<li>Orthographic cameras can now be adjusted to match the window size by using <code>CameraNormalOrthoSystem</code>.</li>
+<li>Text alignment is now supported in the UI.</li>
+<li>Multi-line text is now supported in the UI.</li>
+<li>The new <code>Hidden</code> component can now be added to entities in order to temporarily stop rendering of them.</li>
+<li>The <code>Removal</code> component allows to easily remove a group of entities at once by calling the <code>exec_removal</code> function. It can be used in combination with prefabs to switch between scenes and UI menus easily.</li>
+<li>The <code>DestroyAtTime</code> and <code>DestroyInTime</code> components allow destroying entities at a future point in time. The first one specifies the exact time in seconds at which the entity should be destroyed, and the second one specifies a &quot;time remaining to live&quot; duration.</li>
+<li>TGA image support.</li>
+<li>The <code>Transform</code> component can be created from the <code>Vector3</code> translation.</li>
+<li>Support to load native fonts for UiText (and UiButton!), as well as default fonts for text.</li>
+</ul>
+<h2 id="some-fixes">Some Fixes</h2>
+<p>There has been a lot of bug fixing and tweaking going on for this release. Here is a highlight of some of them:</p>
+<ul>
+<li>Flat render gamma should now be fixed in most cases.</li>
+<li>Hardware compatibility should now be improved.</li>
+<li>glTF scenes no longer have materials swapped around.</li>
+<li>glTF node names are now loaded into the <code>Named</code> component.</li>
+<li>glTF adds the MeshData component to create entities. We plan on adding configuration options for this soon.</li>
+<li>Support for progressive JPEG loading was added.</li>
+<li>Rendering work around for MacOS 10.14.X added.</li>
+<li>The mouse hiding feature can now be configured through the <code>HideCursor</code> component.</li>
+<li>Improved the configurability of the logger. (log level, log to file, etc…)</li>
+<li><code>ProgressCounter</code> now shows loading errors.</li>
+<li>Improvements to <code>TextureMetadata</code> allows selecting the filtering method. (Nearest, Linear, etc…)</li>
+<li>UI coordinates now go from bottom to top.</li>
+<li>Fixed UI issue with anchors and global positionning.</li>
+<li>Fixed UI issue where events were sometime ignored.</li>
+</ul>
+<p>For a full list of changes, see <a href="https://github.com/amethyst/amethyst/blob/master/docs/CHANGELOG.md">this changelog file</a>.</p>
+<h2 id="documentation">Documentation</h2>
+<p>This release, we continued with the trend launched by the 0.8 release: We kept a heavy focus on keeping the documentation up to date and to explain more of the internals of the engine.</p>
+<p>The beginner tutorial has been made more beginner-friendly too, with easier to follow instructions.</p>
+<h2 id="previous-and-new-goals">Previous and new Goals</h2>
+<p>In the previous release post we made a list for planned features that would have landed in this version. While not all of them made it in this time you can be sure that we are still working on making them a reality as soon as possible. The major new features of <code>0.10</code> are going to be the <a href="https://github.com/rustgd/rendy">new renderer</a> and migrating to a new math library called <a href="https://nalgebra.org/">nalgebra</a>. If you want to help us make <code>0.10</code> even more awesome than this release, feel free to <a href="https://discord.gg/GnP5Whs">join our Discord</a> and say hi; we are always happy to help new contributors!</p>
+<h2 id="people-we">People we <3</h2>
+<p>We would like to thank all our contributors who were involved in making this release possible:</p>
+<ul>
+<li>@0rganic</li>
+<li>@Adrijaned</li>
+<li>@anderejd</li>
+<li>@askreet</li>
+<li>@azriel91</li>
+<li>@cs2dsb</li>
+<li>@DarrenTsung</li>
+<li>@distransient</li>
+<li>@FaultyRAM</li>
+<li>@fletcher</li>
+<li>@fushsnj</li>
+<li>@gardrek</li>
+<li>@highway900</li>
+<li>@jackmott</li>
+<li>@jjedelsky</li>
+<li>@jojolepro</li>
+<li>@khskarl</li>
+<li>@LEXUGE</li>
+<li>@LucioFranco</li>
+<li>@magnonellie</li>
+<li>@mh84</li>
+<li>@Moxinilian</li>
+<li>@msiglreith</li>
+<li>@NCrashed</li>
+<li>@nhowell</li>
+<li>@randomPoison</li>
+<li>@Rhuagh</li>
+<li>@Ristarg</li>
+<li>@rivertam</li>
+<li>@robinvd</li>
+<li>@scorbeil</li>
+<li>@SmashedCanary</li>
+<li>@sylvestre</li>
+<li>@Telzhaak</li>
+<li>@TimonPost</li>
+<li>@tomcumming</li>
+<li>@torkleyy</li>
+<li>@usbalbin</li>
+<li>@vektah</li>
+<li>@VictorKoenders</li>
+<li>@virome</li>
+<li>@Xaeroxe</li>
+</ul>
+<p>As well as everyone who reviewed pull requests, opened issues, participated in the design discussions, and requested features!</p>
+</div>
+</div>
+ 
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                <br>
+                <a href="&#x2F;doc">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;discord.gg&#x2F;E2Dd244">Discord</a>
+                <br>
+                <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Subreddit</a>
+                <br>
+                <a href="/rss.xml">RSS Feed</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["DestroyAtTime","Destroys the entity to which this is attached at the specified time (in seconds)."],["DestroyInTime","Destroys the entity to which this is attached after the specified time interval (in seconds)."],["TimedDestroySystem","The system in charge of destroying entities with the `DestroyAtTime` or `DestroyInTime` components."]]});

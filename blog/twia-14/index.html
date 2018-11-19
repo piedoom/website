@@ -1,0 +1,218 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="What happened this week: asset loading, skyboxes, fonts, working groups">
+    <meta name="author" content="Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="This week in Amethyst 14" />
+    <meta property="og:description" content="What happened this week: asset loading, skyboxes, fonts, working groups">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;blog&#x2F;twia-14&#x2F;" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;assets&#x2F;amethyst.png" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2018-11-11" />
+
+    <title>Amethyst - This week in Amethyst 14</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+     
+<div id="content">
+    <div id="title">This week in Amethyst 14</div>
+    <div id="subtitle">Published on 2018-11-11  by 
+        <a href="https:&#x2F;&#x2F;github.com&#x2F;torkleyy">torkleyy</a>
+    </div>
+    <div id="article-content"><p>Hello and welcome to the 14th issue of <em>This Week in Amethyst</em>, a blog bringing to
+you the latest changes regarding Amethyst, a data-driven game engine written in
+Rust.</p>
+<p>Content of this issue:</p>
+<ul>
+<li>Recent changes</li>
+<li>Current work</li>
+<li>Interesting discussions</li>
+<li>Call for participation</li>
+</ul>
+<h2 id="recent-changes">Recent changes</h2>
+<h3 id="nalgebra-migration">Nalgebra migration</h3>
+<p><a href="https://github.com/amethyst/amethyst/issues/942">Discussions within Amethyst</a> about a migration to nalgebra began in September due to
+calls by <a href="https://github.com/tomaka">tomaka</a> for the Rust game development ecosystem to standardize on
+a single library for math and linear algebra in his post <a href="https://users.rust-lang.org/t/my-gamedever-wishlist-for-rust/2859">&quot;My gamedever wishlist for Rust&quot;</a>.</p>
+<p>Eminent contributor <a href="https://github.com/magnonellie">Ellie</a> completed the migration of Amethyst's
+internal math library from cgmath to nalgebra in <a href="https://github.com/amethyst/amethyst/pull/1066">this PR</a>, marking another
+win for the Rust game development ecosystem and showing Amethyst's commitment to
+the larger community. Thank you Ellie!</p>
+<p>With the migration completed, a number of public APIs will change in Amethyst's next release along
+with updates to examples and documentation. Expect more details on the API changes in a future post.</p>
+<h3 id="asset-loading-helper">Asset loading helper</h3>
+<p>Thanks to <a href="https://github.com/Rhuagh">Rhuagh</a>, asset loading is now a bit easier (<a href="https://github.com/amethyst/amethyst/pull/1090">PR</a>).</p>
+<p>This is how it looks outside of a system:</p>
+<pre style="background-color:#272822">
+<span style="background-color:#272822;font-style:italic;color:#66d9ef;">let</span><span style="background-color:#272822;color:#f8f8f2;"> mesh </span><span style="background-color:#272822;color:#f92672;">=</span><span style="background-color:#272822;color:#f8f8f2;"> world.</span><span style="background-color:#272822;color:#66d9ef;">exec</span><span style="background-color:#272822;color:#f8f8f2;">(|</span><span style="background-color:#272822;font-style:italic;color:#fd971f;">loader</span><span style="background-color:#272822;color:#f8f8f2;">: AssetLoaderSystemData&lt;Mesh&gt;| {
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">loader.</span><span style="background-color:#272822;color:#66d9ef;">load_from_data</span><span style="background-color:#272822;color:#f8f8f2;">(
+</span><span style="background-color:#272822;color:#f8f8f2;">        </span><span style="background-color:#272822;color:#f8f8f2;">Shape::Sphere(</span><span style="background-color:#272822;color:#ae81ff;">32</span><span style="background-color:#272822;color:#f8f8f2;">, </span><span style="background-color:#272822;color:#ae81ff;">32</span><span style="background-color:#272822;color:#f8f8f2;">).generate::&lt;Vec&lt;PosNormTangTex&gt;&gt;(</span><span style="background-color:#272822;font-style:italic;color:#66d9ef;">None</span><span style="background-color:#272822;color:#f8f8f2;">),
+</span><span style="background-color:#272822;color:#f8f8f2;">        </span><span style="background-color:#272822;color:#f8f8f2;">(),
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">)
+</span><span style="background-color:#272822;color:#f8f8f2;">});
+</span></pre>
+<p>And this is an example inside a system:</p>
+<pre style="background-color:#272822">
+<span style="background-color:#272822;font-style:italic;color:#66d9ef;">impl</span><span style="background-color:#272822;color:#f8f8f2;">&lt;</span><span style="background-color:#272822;color:#f92672;">&#39;a</span><span style="background-color:#272822;color:#f8f8f2;">&gt; System&lt;</span><span style="background-color:#272822;color:#f92672;">&#39;a</span><span style="background-color:#272822;color:#f8f8f2;">&gt; </span><span style="background-color:#272822;color:#f92672;">for </span><span style="background-color:#272822;color:#f8f8f2;">MySys {
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;font-style:italic;color:#66d9ef;">type </span><span style="background-color:#272822;color:#f8f8f2;">SystemData </span><span style="background-color:#272822;color:#f92672;">= </span><span style="background-color:#272822;color:#f8f8f2;">(
+</span><span style="background-color:#272822;color:#f8f8f2;">        </span><span style="background-color:#272822;color:#75715e;">// ..
+</span><span style="background-color:#272822;color:#f8f8f2;">        </span><span style="background-color:#272822;color:#f8f8f2;">AssetLoaderSystemData&lt;</span><span style="background-color:#272822;color:#f92672;">&#39;a</span><span style="background-color:#272822;color:#f8f8f2;">, Texture&gt;,
+</span><span style="background-color:#272822;color:#f8f8f2;">        </span><span style="background-color:#272822;color:#75715e;">// ..
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">);
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;font-style:italic;color:#66d9ef;">fn </span><span style="background-color:#272822;color:#a6e22e;">run</span><span style="background-color:#272822;color:#f8f8f2;">(</span><span style="background-color:#272822;color:#f92672;">&amp;mut </span><span style="background-color:#272822;font-style:italic;color:#fd971f;">self</span><span style="background-color:#272822;color:#f8f8f2;">, ..) {
+</span><span style="background-color:#272822;color:#f8f8f2;">        </span><span style="background-color:#272822;font-style:italic;color:#66d9ef;">let</span><span style="background-color:#272822;color:#f8f8f2;"> texture </span><span style="background-color:#272822;color:#f92672;">=</span><span style="background-color:#272822;color:#f8f8f2;"> loader.</span><span style="background-color:#272822;color:#66d9ef;">load</span><span style="background-color:#272822;color:#f8f8f2;">(</span><span style="background-color:#272822;color:#e6db74;">&quot;mytexture.png&quot;</span><span style="background-color:#272822;color:#f8f8f2;">, PngFormat,
+</span><span style="background-color:#272822;color:#f8f8f2;">            </span><span style="background-color:#272822;color:#f8f8f2;">TextureMetadata::srgb(), ());
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">}
+</span><span style="background-color:#272822;color:#f8f8f2;">}
+</span></pre><h3 id="skybox-pass">Skybox Pass</h3>
+<p>We finally got a skybox pass! Thank you, <a href="https://github.com/photex">photex</a>!
+It's only a gradient skybox for now, but it looks nice already.
+This is how you can try it out:</p>
+<p>Instead of <code>.with_basic_renderer</code>, use the <code>RenderBundle</code> and build
+the pipeline yourself. Now, you just need to add</p>
+<pre style="background-color:#272822">
+<span style="background-color:#272822;color:#f8f8f2;">.</span><span style="background-color:#272822;color:#66d9ef;">with_pass</span><span style="background-color:#272822;color:#f8f8f2;">(DrawSkybox::new())
+</span></pre>
+<p>to a pipeline stage and you get a skybox.
+You can tweak it using the <code>SkyboxColor</code> resource.</p>
+<p>Here's a screenshot of the game <a href="https://github.com/photex">photex</a> and <a href="https://github.com/brendanzab">brendanzab</a> are working
+on (using the new gradient skybox):</p>
+<p><img src="https://user-images.githubusercontent.com/23152057/48365134-559d4880-e6aa-11e8-9b7a-d60b40b4f895.png" alt="Game screenshot" /></p>
+<h3 id="font-loading-tweaks">Font loading tweaks</h3>
+<p>Thank you <a href="https://github.com/jjedelsky">jjedelsky</a> and <a href="https://github.com/DoumanAsh">DoumanAsh</a> for making font loading better:</p>
+<p>We can now</p>
+<ul>
+<li>fall back to the default system font and</li>
+<li>load default font from a path (no need to package it anymore)</li>
+</ul>
+<p>Check out the PRs <a href="https://github.com/amethyst/amethyst/pull/1104">here</a> and <a href="https://github.com/amethyst/amethyst/pull/1108">here</a>.</p>
+<h3 id="default-logger-more-configurable">Default logger more configurable</h3>
+<p>Amethyst uses the logging library <a href="https://github.com/daboross/fern">fern</a> which has really nice builder-based configuration support.
+A <a href="https://github.com/amethyst/amethyst/pull/1107">recent PR</a> enables users of Amethyst to configure the default logger with options like
+<code>level_for()</code> before starting the logger. Check out the example:</p>
+<pre style="background-color:#272822">
+<span style="background-color:#272822;font-style:italic;color:#66d9ef;">let</span><span style="background-color:#272822;color:#f8f8f2;"> logger </span><span style="background-color:#272822;color:#f92672;">= </span><span style="background-color:#272822;color:#f8f8f2;">amethyst::Logger::from_config(amethyst::LoggerConfig::default());
+</span><span style="background-color:#272822;color:#f8f8f2;">logger.</span><span style="background-color:#272822;color:#66d9ef;">get_dispatch</span><span style="background-color:#272822;color:#f8f8f2;">()
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">.</span><span style="background-color:#272822;color:#66d9ef;">level_for</span><span style="background-color:#272822;color:#f8f8f2;">(</span><span style="background-color:#272822;color:#e6db74;">&quot;gfx_device_gl&quot;</span><span style="background-color:#272822;color:#f8f8f2;">, log::LevelFilter::Warn)
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">.</span><span style="background-color:#272822;color:#66d9ef;">level_for</span><span style="background-color:#272822;color:#f8f8f2;">(</span><span style="background-color:#272822;color:#e6db74;">&quot;gfx_glyph&quot;</span><span style="background-color:#272822;color:#f8f8f2;">, log::LevelFilter::Error)
+</span><span style="background-color:#272822;color:#f8f8f2;">    </span><span style="background-color:#272822;color:#f8f8f2;">.</span><span style="background-color:#272822;color:#66d9ef;">apply</span><span style="background-color:#272822;color:#f8f8f2;">();
+</span></pre>
+<p>Thank you for helping us keep our logs clean <a href="https://github.com/qqwa">qqwa</a>!</p>
+<h2 id="what-s-being-worked-on-currently">What's being worked on currently?</h2>
+<p>The fifth Pong tutorial chapter is very close to being merged. Credit goes
+to <a href="https://github.com/Leorii">Leorii</a> for the amazing PR! If you want to, you can already check
+out <a href="https://github.com/amethyst/amethyst/pull/1085">the PR</a> and add some comments in case you notice anything.</p>
+<p>There are so many other open PRs, if you're interested, you can check them out
+yourself <a href="https://github.com/amethyst/amethyst/pulls">here</a>.</p>
+<h2 id="interesting-discussions">Interesting discussions</h2>
+<p>Although not exactly an Amethyst discussion, there's a thread on
+<a href="https://internals.rust-lang.org/t/a-working-group-for-rust-game-development/8240">internals.rust-lang.org</a> that discusses a working group for Rust game
+development.</p>
+<p>More features, documentation and stability would be a huge help to Amethyst,
+so we would greatly appreciate such a working group.
+Make sure to <a href="https://internals.rust-lang.org/t/a-working-group-for-rust-game-development/8240">bring in your input</a>!</p>
+<h2 id="call-for-participation">Call for participation</h2>
+<p>We love contributions from the community, so if you see something you'd like
+to work on, don't hesitate! We are going to help you and point you into the
+right direction if something doesn't work out at first.</p>
+<p>We have tasks with different difficulty. Make sure to choose easier ones at
+first, because hard issues can become quite frustrating, especially if you
+haven't worked on Amethyst before.</p>
+<p>Here are four issues for you to pick from:</p>
+<ul>
+<li>[easy | <strong>amethyst/laminar</strong>] <a href="https://github.com/amethyst/laminar/issues/45">Polish crates (more config options, docs, code coverage)</a></li>
+<li>[moderate | <strong>amethyst/laminar</strong>] <a href="https://github.com/amethyst/laminar/issues/33">Help writing the book documenting the protocol</a></li>
+<li>[moderate | <strong>amethyst/amethyst</strong>] <a href="https://github.com/amethyst/amethyst/issues/1086">Make it easier to display an image</a></li>
+<li>[hard | <strong>amethyst/amethyst</strong>] <a href="https://github.com/amethyst/amethyst/issues/135">Investigate crash related to multisampling</a></li>
+</ul>
+<p>Please let us know that you're working on an issue using a short comment,
+that way we can avoid duplicate work. Contributing to the discussion is also
+appreciated!</p>
+<p>Thank you for helping push the project forward!</p>
+</div>
+</div>
+ 
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                <br>
+                <a href="&#x2F;doc">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;discord.gg&#x2F;E2Dd244">Discord</a>
+                <br>
+                <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Subreddit</a>
+                <br>
+                <a href="/rss.xml">RSS Feed</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

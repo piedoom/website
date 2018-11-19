@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["FluentBundle","`FluentBundle` is a collection of localization messages which are meant to be used together in a single view, widget or any other UI abstraction."],["Message",""]]});

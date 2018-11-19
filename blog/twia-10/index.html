@@ -1,0 +1,181 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Tenth issue of This Week in Amethyst.">
+    <meta name="author" content="Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="This Year in Amethyst 10" />
+    <meta property="og:description" content="Tenth issue of This Week in Amethyst.">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;blog&#x2F;twia-10&#x2F;" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;assets&#x2F;amethyst.png" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2017-09-16" />
+
+    <title>Amethyst - This Year in Amethyst 10</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+     
+<div id="content">
+    <div id="title">This Year in Amethyst 10</div>
+    <div id="subtitle">Published on 2017-09-16 
+    </div>
+    <div id="article-content"><blockquote>
+<p>News from <code>Sep 11, 2016</code> – <code>Sep 16, 2017</code></p>
+</blockquote>
+<p>Hello and welcome to the <code>10th</code> issue of <em>This <strike>Week</strike> Year in
+Amethyst</em>, a blog bringing you the latest changes and updates regarding the
+Amethyst game engine every <strike>week</strike> year. If you have any
+suggestions or ideas, feel free to voice them <a href="https://github.com/amethyst/website">on GitHub</a> or
+<a href="https://gitter.im/orgs/amethyst/rooms">the Gitter chat</a>.</p>
+<p><code>145</code> pull requests <a href="https://github.com/amethyst/amethyst/pulls?q=is:merged+closed:2016-09-11..2017-10-03">in the engine</a> landed this <strike>week</strike> year.</p>
+<h2 id="announcements">Announcements</h2>
+<p>Version 0.5.1 was released! A lot of work was done during this year.
+Asset management was rewritten by <a href="https://github.com/torkleyy">@torkleyy</a> in <a href="https://github.com/amethyst/amethyst/pull/244">#244</a>
+now assets can be loaded asynchronously using futures.
+Audio support was added by <a href="https://github.com/Xaeroxe">@Xaeroxe</a> in <a href="https://github.com/amethyst/amethyst/pull/265">#265</a>
+Renderer was rewritten by <a href="https://github.com/ebkalderon">@ebkalderon</a> in <a href="https://github.com/amethyst/amethyst/pull/285">#285</a>
+now we have better design and parallel data rendering.
+Input system was overhauled by <a href="https://github.com/Xaeroxe">@Xaeroxe</a> in <a href="https://github.com/amethyst/amethyst/pull/247">#247</a>,
+<a href="https://github.com/amethyst/amethyst/pull/261">@261</a>, and <a href="https://github.com/amethyst/amethyst/pull/274">#274</a> now we have input rebinding.
+Thanks to <a href="https://github.com/torkleyy">@torkleyy</a>'s work in <a href="https://github.com/amethyst/amethyst/pull/269">#269</a> we now use RON instead of YAML for configs.</p>
+<h2 id="what-s-cooking-on-develop">What's cooking on develop?</h2>
+<h3 id="notable-additions">Notable additions</h3>
+<ul>
+<li>Input system has been even further refactored to be event driven and generic by <a href="https://github.com/Xaeroxe">@Xaeroxe</a> in <a href="https://github.com/amethyst/amethyst/pull/385">#385</a></li>
+<li>Specs aware renderer pipeline added by <a href="https://github.com/omni-viral">@omni-viral</a> in <a href="https://github.com/amethyst/amethyst/pull/317">#317</a></li>
+<li>ECS bundles added by <a href="https://github.com/Rhuagh">@Rhuagh</a> in <a href="https://github.com/amethyst/amethyst/pull/364">#364</a> (These bundle up related components and resources,
+making it easier to get started with amethyst.)</li>
+</ul>
+<h3 id="breaking-changes">Breaking changes</h3>
+<ul>
+<li>Asset management was rewritten by <a href="https://github.com/torkleyy">@torkley</a></li>
+<li>RON instead of YAML is used as config format thanks to <a href="https://github.com/torkleyy">@torkleyy</a></li>
+<li>Input system was overhauled by <a href="https://github.com/Xaeroxe">@Xaeroxe</a></li>
+<li>Renderer was completely rewritten by <a href="https://github.com/ebkalderon">@eyalkalderon</a> with help from <a href="https://github.com/omni-viral">@omni-viral</a></li>
+</ul>
+<h2 id="calls-for-participation">Calls for participation</h2>
+<ul>
+<li>We could really use some help with getting our <a href="https://github.com/amethyst/tools">tools repository</a> and <a href="https://github.com/amethyst/amethyst/tree/master/book">the book</a>
+up to date, any help here would be greatly appreciated!</li>
+</ul>
+<h2 id="new-amethyst-organization-members">New amethyst organization members</h2>
+<ul>
+<li><a href="https://github.com/omni-viral">omni-viral</a></li>
+<li><a href="https://github.com/torkleyy">torkleyy</a></li>
+<li><a href="https://github.com/Xaeroxe">Xaeroxe</a></li>
+</ul>
+<h2 id="new-contributors">New contributors</h2>
+<ul>
+<li><a href="https://github.com/Xaeroxe">Xaeroxe</a></li>
+<li><a href="https://github.com/torkleyy">torkleyy</a></li>
+<li><a href="https://github.com/omni-viral">omni-viral</a></li>
+<li><a href="https://github.com/Rhuagh">Rhuagh</a></li>
+<li><a href="https://github.com/vitvakatu">vitvakatu</a></li>
+<li><a href="https://github.com/mechaxl">mechaxl</a></li>
+<li><a href="https://github.com/Lionex">Lionex</a></li>
+<li><a href="https://github.com/derekdreery">derekdreery</a></li>
+<li><a href="https://github.com/Binero">Binero</a></li>
+<li><a href="https://github.com/Object905">Object905</a></li>
+<li><a href="https://github.com/ivandardi">ivandardi</a></li>
+<li><a href="https://github.com/anderejd">anderejd</a></li>
+<li><a href="https://github.com/ahmedcharles">ahmedcharles</a></li>
+<li><a href="https://github.com/stenverbois">stenverbois</a></li>
+<li><a href="https://github.com/aochagavia">aochagavia</a></li>
+<li><a href="https://github.com/minecrawler">minecrawler</a></li>
+<li><a href="https://github.com/Cldfire">Cldfire</a></li>
+<li><a href="https://github.com/ForsakenHarmony">ForsakenHarmony</a></li>
+<li><a href="https://github.com/scorbeil">scorbeil</a></li>
+<li><a href="https://github.com/Hammster">Hammster</a></li>
+<li><a href="https://github.com/jFransham">jFransham</a></li>
+<li><a href="https://github.com/vvuk">vvuk</a></li>
+<li><a href="https://github.com/sekhat">sekhat</a></li>
+<li><a href="https://github.com/palodequeso">palodequeso</a></li>
+<li><a href="https://github.com/cooperra">cooperra</a></li>
+</ul>
+<h2 id="new-issues">New issues</h2>
+<p>It's been so long since one of these posts has been written that most of our issues qualify as &quot;new&quot; so this section is being omitted from this post.</p>
+</div>
+</div>
+ 
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                <br>
+                <a href="&#x2F;doc">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;discord.gg&#x2F;E2Dd244">Discord</a>
+                <br>
+                <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Subreddit</a>
+                <br>
+                <a href="/rss.xml">RSS Feed</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

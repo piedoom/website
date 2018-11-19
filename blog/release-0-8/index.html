@@ -1,0 +1,172 @@
+
+
+<!DOCTYPE html>
+<html lang="en-us" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="With a brand new tutorial and a ton of new features, including prefabs, controller support, MP3 audio, localisation and an even better ergonomics!">
+    <meta name="author" content="Moxinilian (Théo Degioanni)">
+    <meta property="og:site_name" content="Amethyst">
+    <meta property="og:title" content="Amethyst 0.8 has been released!" />
+    <meta property="og:description" content="With a brand new tutorial and a ton of new features, including prefabs, controller support, MP3 audio, localisation and an even better ergonomics!">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;blog&#x2F;release-0-8&#x2F;" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;www.amethyst.rs&#x2F;assets&#x2F;amethyst.png" />
+    <meta property="og:image:width" content="425">
+    <meta property="og:image:height" content="425">
+    <meta property="og:image:type" content="image/png" />
+    
+<meta property="article:published_time" content="2018-08-05" />
+
+    <title>Amethyst - Amethyst 0.8 has been released!</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani:700|Roboto:300|Source+Code+Pro">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/article.css">
+    <link rel="icon" href="/assets/amethyst.svg">
+</head>
+
+<body>
+    
+    <header id="header">
+        <div id="header-bar">
+            <a id="header-home" href="/" class="no-deco">
+                <img id="header-logo" src="/assets/amethyst.svg" alt="Amethyst Logo">
+                <span id="header-title">Amethyst</span>
+            </a>
+            <nav id="header-menu">
+                <a class="header-button no-deco desktop left-icon" href="/doc">
+                    <i class="fas fa-book"></i> Docs</a>
+                <a class="header-button no-deco desktop left-icon" href="/blog">
+                    <i class="far fa-newspaper"></i> News</a>
+                <a class="header-button no-deco desktop left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                    <i class="fab fa-github"></i> GitHub</a>
+                <a class="header-button no-deco desktop left-icon" href="/get-started">
+                    <i class="fas fa-play-circle"></i> Get started</a>
+                <div id="header-burger" class="header-button no-deco" onclick="burgerToggle()">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+        <nav id="header-menu-alt">
+            <a class="header-button-alt no-deco left-icon" href="/get-started">
+                <i class="fas fa-play-circle"></i> Get started</a>
+            <a class="header-button-alt no-deco left-icon" href="/doc">
+                <i class="fas fa-book"></i> Docs</a>
+            <a class="header-button-alt no-deco left-icon" href="/blog">
+                <i class="far fa-newspaper"></i> News</a>
+            <a class="header-button-alt no-deco left-icon" href="https:&#x2F;&#x2F;github.com&#x2F;amethyst&#x2F;amethyst">
+                <i class="fab fa-github"></i> GitHub</a>
+        </nav>
+        <script src="/js/header.js"></script>
+    </header>
+     
+<div id="content">
+    <div id="title">Amethyst 0.8 has been released!</div>
+    <div id="subtitle">Published on 2018-08-05 
+    </div>
+    <div id="article-content"><p>Hello everyone! Amethyst version 0.8 just got released, and with it comes a ton of new stuff.
+We would like to give a huge shout out to the team for this massive update, more than 25,000 lines of code added for this new release!</p>
+<h2 id="website">Website</h2>
+<p>We have a brand new website! You are even looking at it right now.<br />
+We hope you will like it! Feel free to check out <a href="https://www.amethyst.rs/">the home page</a> for more info about Amethyst.</p>
+<h2 id="tutorial">Tutorial</h2>
+<p>We also have a brand new tutorial!
+Everything you need to know about the concepts and terminology of the engine is in there, along with examples and hands-on exercises.
+You can read the new tutorial <a href="https://www.amethyst.rs/book/master/">here</a>!</p>
+<h2 id="new-features">New Features</h2>
+<ul>
+<li>Localisation wrapper around the <code>fluent</code> crate.</li>
+<li>Added raw mouse movement events to player controllers.</li>
+<li>Added Arc Ball Camera (3rd person controller).</li>
+<li>Prefabs! Oh, and also you can nest them into one another.</li>
+<li>Better text caching.</li>
+<li>Utilities for input handling.</li>
+<li>UIButton improvements! (Automatically play sounds, change texture and more!)</li>
+<li>Helper function for single-pass renderer. Less boilerplate!</li>
+<li>Shape mesh generator.</li>
+<li>More user-friendly UI systems.</li>
+<li>MP3 file support.</li>
+<li>User-friendly sprite rendering utilities. Easily create sprites from complex spritesheets.</li>
+<li>Better logging support.</li>
+<li>Controller support!</li>
+<li>Some minor bugfixes.</li>
+</ul>
+<p>See all the merged pull requests <a href="https://github.com/amethyst/amethyst/pulls?page=1&amp;q=is%3Apr+is%3Amerged+merged%3A%3E%3D2018-05-01&amp;utf8=%E2%9C%93">here</a>!</p>
+<h2 id="about-prefabs">About prefabs</h2>
+<p>You can create most of your game as simple text files. Everything that is pure data (ui, scenes, players, entities and components) can all be created as prefabs.
+This means that you can easily copy big reusable chunks from one game to another, and even share pieces of it with the community!</p>
+<p>Data-oriented programming allows you to accelerate the prototyping speed and reusability of your projects a lot.</p>
+<h2 id="community">Community</h2>
+<p>In the past few months, we saw a big increase in the number of developers joining the project. Welcome and thanks to every single of you!
+It is because of the continuous support we get from the community that we are able to keep pushing the Amethyst project forward.</p>
+<p>Thanks to everyone, from people simply using the engine and asking questions up to all the contributors regularly creating new content for everyone to enjoy!</p>
+<h3 id="new-core-member-promotion">New Core Member Promotion</h3>
+<p>Congratulations to <a href="https://github.com/Moxinilian">@Moxinilian</a> for his promotion to the core developer team!</p>
+<p>Here is what he has to say about the engine:</p>
+<blockquote>
+<p>Hi!<br>
+First of all, I would like to thank all the awesome people of the Amethyst project for their help and what they taught me during the last few months. Working on Amethyst has been a hell of a ride, and it's been tons of fun so far!<br>
+I began contributing to Amethyst originally because I wanted to make a game using cutting edge technologies and workflow, but I could not find a game engine that was both modern and satisfied my specific needs. So I decided to start contributing to the most promising one!<br>
+I had never worked on an open source project before and so far it as been nothing but a great experience. I have multiple subprojects in the engine I care about a lot (most notably mobile devices support and 2D ease of use utilities)  and I can't wait to get them done!</p>
+</blockquote>
+<h2 id="release-cycles">Release Cycles</h2>
+<p>While we have yet to figure out how we could possibly have a fixed release schedule, we do understand the importance of releasing more often.
+Therefore, we plan on limiting this release cycle to a time frame of between one and two months, so that you can experience all the new features without needing to use the develop branch.</p>
+<h2 id="planned-features-for-0-9">Planned Features for 0.9</h2>
+<p>While you're still here, we can already tease a couple of the features we want to get in version 0.9:</p>
+<ul>
+<li>Networking: Udp connection management and client-server infrastructures.</li>
+<li>Terminal duplex. See your game output while being able to enter commands and control and debug the engine at runtime!</li>
+<li>Prototyping improvements: an easy to use bundle with all the common things used in an Amethyst game.</li>
+<li>Sprite renderer pass for improved sprite support and easier manipulation.</li>
+<li>(Maybe) More Ui components.</li>
+</ul>
+<h2 id="future-major-features">Future Major Features</h2>
+<p>And here are our important milestones we hope to get working soon!</p>
+<ul>
+<li>New rendering stack</li>
+<li>Mobile support</li>
+<li>Scripting</li>
+<li>Editor (We mostly need to finish the ui components before we can create the editor.)</li>
+<li>Advanced network systems (lag compensation, priority queues)</li>
+</ul>
+</div>
+</div>
+ 
+    <footer id="footer">
+        <div id="footer-menu">
+            <div>
+                <div class="footer-title">Project</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;github.com&#x2F;amethyst">GitHub</a>
+                <br>
+                <a href="&#x2F;doc">Documentation</a>
+                <br>
+                <a href="/blog">Blog</a>
+            </div>
+            <div>
+                <div class="footer-title">Community</div>
+                <br>
+                <a href="https:&#x2F;&#x2F;discord.gg&#x2F;E2Dd244">Discord</a>
+                <br>
+                <a href="https:&#x2F;&#x2F;reddit.com&#x2F;r&#x2F;amethyst">Subreddit</a>
+                <br>
+                <a href="/rss.xml">RSS Feed</a>
+            </div>
+        </div>
+        <br>
+        <div id="footer-disclaimer">This website and the Amethyst logo are licensed under a
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode">
+                <b>Creative Commons Attribution-ShareAlike 4.0 License</b>.
+            </a>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

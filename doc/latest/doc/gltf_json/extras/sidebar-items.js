@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["Value","Represents any valid JSON value."]],"struct":[["Void","Type representing no user-defined data."]],"type":[["Extras","Data type of the `extras` attribute on all glTF objects."]]});
