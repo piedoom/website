@@ -46,7 +46,10 @@ Note that this is a long process.  If you are looking to get up and running quic
 $ cd src && zola serve
 ```
 
-This will generate temporary files in `src/public` as well as start a local server with live updates.  If you are just looking to generate files without a webserver, you can use `zola build` instead of `serve`.  The homepage can be found at `public/index.html`.
+This will generate temporary files in `src/public` as well as start a local server with live updates.  When the server is stopped, all generated files will be cleaned up and deleted.
+
+Alternatively, you can run `./quick_build`.  This is similar to ```cd src && zola build```.  Note that this folder is in the project root under `build`, and will not automatically delete itself.  The homepage can be found at `public/index.html`.
+
 
 ## Contributing
 
